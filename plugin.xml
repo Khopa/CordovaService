@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.alu.cordova-service"
+        version="0.0.1">
+
+    <name>ALU Service</name>
+    <description>Service Plugin for Android. Start any service from Javascript code,
+        and register them to start at device boot</description>
+    <license>Apache 2.0</license>
+    <keywords>Service</keywords>
+    <repo>TODO</repo>
+    <issue>TODO</issue>
+
+    <js-module src="www/service.js" name="www/js/plugin/service.js"/>
+
+    <!-- android -->
+    <platform name="android">
+
+        <!-- Inject permissions for boot receiver -->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        </config-file>
+
+        <!-- Bind Boot Finished action to ServiceBoot Receiver
+        <config-file target="AndroidManifest.xml" parent="/application">
+            <receiver android:enabled="true" android:name="com.alu.service.ServiceBootReceiver">
+                <intent-filter>
+                    <action android:name="android.intent.action.BOOT_COMPLETED" />
+                </intent-filter>
+            </receiver>
+        </config-file> -->
+
+    </platform>
+
+    <!-- ios : TODO -->
+
+
+</plugin>

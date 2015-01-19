@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "name": "com.alu.cordova-service",
+    "cordova_name": "Cordova Service Manager",
+    "description": "Manage background and foreground services",
+    "license": "",
+    "repo": "",
+    "issue": "",
+    "keywords": [
+        "Service",
+        "Foreground Service"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": []
+}
