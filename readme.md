@@ -12,19 +12,23 @@ This plugins allows to start and stop custom native Android foreground services.
 window.startService(serviceClassName, callback, error)
 ```
 
-```
+This start
+
+
+
+```javascript
 window.stop(serviceClassName, callback, error)
 ```
 
-```
+```javascript
 window.registerService(serviceClassName, callback, error)
 ```
 
-```
+```javascript
 window.unregisterService(serviceClassName, callback, error)
 ```
 
-```
+```javascript
 window.isServiceRunning(serviceClassName, callback, error)
 ```
 
