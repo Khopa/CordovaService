@@ -10,8 +10,8 @@
         and register them to start at device boot</description>
     <license>Apache 2.0</license>
     <keywords>Service</keywords>
-    <repo>TODO</repo>
-    <issue>TODO</issue>
+    <repo>https://github.com/Khopa/com.alu.cordova-service</repo>
+    <issue>https://github.com/Khopa/com.alu.cordova-service/issues</issue>
 
     <js-module src="www/service.js" name="www/js/plugin/service.js"/>
 
