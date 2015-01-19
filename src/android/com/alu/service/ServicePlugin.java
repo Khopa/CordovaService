@@ -32,12 +32,12 @@ public class ServicePlugin extends CordovaPlugin {
 		
 		if("startService".equals(action)){
 			serviceClassName = args.get(0).toString();
+			Log.d(LOG_KEY, "Starting service");
 			result = startService(serviceClassName);
 	    	callbackContext.success(String.valueOf(result));
 	    	return true;
 		}else if("stopService".equals(action)){
 			serviceClassName = args.get(0).toString();
-			
 	    	callbackContext.success();
 	    	return true;
 	    }else if("registerService".equals(action)){
@@ -48,10 +48,12 @@ public class ServicePlugin extends CordovaPlugin {
 	    }else if("unregisterService".equals(action)) {
 	    	serviceClassName = args.get(0).toString();
 	    	result = ServiceManager.unregisterService(cordova.getActivity(), serviceClassName);
+	    	callbackContext.success();
 	    	return true;
 	    }else if("isServiceRunning".equals(action)) {
 	    	serviceClassName = args.get(0).toString();
 	    	result = isServiceRunning(ServiceManager.getServiceClassByName(serviceClassName));
+	    	callbackContext.success();
 	    	return true;
 	    }else{
 	    	Log.d(LOG_KEY, "WARNING : Call to unknown plugin method");
@@ -67,6 +69,7 @@ public class ServicePlugin extends CordovaPlugin {
 		Class<? extends Service> serviceClass = ServiceManager.getServiceClassByName(className);
 		if(serviceClass != null && !isServiceRunning(serviceClass)){
 			cordova.getActivity().startService(new Intent(cordova.getActivity(), serviceClass));
+			Log.d(LOG_KEY, "Starting service -- Step 2 OK");
 			return true;
 		}else{
 			return false;

@@ -29,6 +29,10 @@ public class ExampleServiceA extends Service implements Runnable{
         		"This is the service A running in foreground");
         startForeground(ID, n);
         
+        Log.d(ServicePlugin.LOG_KEY, "This is service A starting");
+        
+        new Thread(this).start();
+        
 		return(START_STICKY);
 	}
 	

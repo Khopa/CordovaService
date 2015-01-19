@@ -32,6 +32,14 @@
             </receiver>
         </config-file>
 
+        <!-- Bind example service -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service
+                android:name=".ExampleServiceA"
+                android:label="ExampleServiceA" >
+            </service>
+        </config-file>
+
         <!-- Inject plugin feature into config.xml -->
         <config-file target="config.xml" parent="/*">
             <feature name="Service">
