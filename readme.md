@@ -2,6 +2,8 @@
 
 *This is still work in progress and incomplete. Use at your own risks*
 
+*Only android is supported currently*
+
 ###Description
 
 This plugins allows to start and stop custom native Android foreground services. It may also register services to start at device boot.
@@ -32,8 +34,7 @@ window.startService(serviceClassName, callback, error)
 </service>
 ```
 
-This start the service whose full name is serviceClassName.
-An example of usage would be :
+**Example of usage :**
 
 ```javascript
 window.startService("com.me.MyService",
@@ -45,7 +46,7 @@ window.startService("com.me.MyService",
 					});
 ```
 
-**The function may return "true" if you launch a service which is not declared in the manifest, that will die immediatly. So don't put too much trust into that return value, and use the isServiceRunning function if you want to be sure of the service's state.**
+*The function may return "true" if you launch a service which is not declared in the manifest, that will die immediatly. So don't put too much trust into that return value, and use the isServiceRunning function if you want to be sure of the service's state.*
 
 ***
 
