@@ -32,6 +32,15 @@
             </receiver>
         </config-file>
 
+        <!-- Inject plugin feature into config.xml -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Cordova-Service">
+                <param name="android-package" value="com.alu.service.ServicePlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <!-- Inject java source file into Android project -->
         <source-file src="src/android/com/alu/service/ServicePlugin.java"           target-dir="src/com/alu/service" />
         <source-file src="src/android/com/alu/service/ServiceUtils.java"            target-dir="src/com/alu/service" />
         <source-file src="src/android/com/alu/service/ServiceBootReceiver.java"     target-dir="src/com/alu/service" />
