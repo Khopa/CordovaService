@@ -16,7 +16,8 @@ See the example usage repository : https://github.com/Khopa/com.alu.cordova-serv
 
 ##What is injected into your manifest
 
-This plugin will inject a boot receiver in your manifest
+This plugin will inject a boot receiver in your manifest.
+
 The permission "android.permission.RECEIVE_BOOT_COMPLETED" (Run at startup) will be added to allow starting services at device startup.
 
 For more details, look up for yourself in plugin.xml.
