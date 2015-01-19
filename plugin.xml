@@ -34,7 +34,7 @@
 
         <!-- Inject plugin feature into config.xml -->
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Cordova-Service">
+            <feature name="Service">
                 <param name="android-package" value="com.alu.service.ServicePlugin" />
                 <param name="onload" value="true" />
             </feature>
