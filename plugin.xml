@@ -24,7 +24,7 @@
         </config-file>
 
         <!-- Bind Boot Finished action to ServiceBoot Receiver -->
-        <config-file target="AndroidManifest.xml" parent="/application">
+        <config-file target="AndroidManifest.xml" parent="/application/*">
             <receiver android:enabled="true" android:name="com.alu.service.ServiceBootReceiver">
                 <intent-filter>
                     <action android:name="android.intent.action.BOOT_COMPLETED" />
