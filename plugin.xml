@@ -32,12 +32,6 @@
             </receiver>
         </config-file>
 
-        <!-- Bind example service -->
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.alu.service.example.ExampleServiceA" android:label="ExampleServiceA" >
-            </service>
-        </config-file>
-
         <!-- Inject plugin feature into config.xml -->
         <config-file target="config.xml" parent="/*">
             <feature name="Service">
@@ -50,7 +44,6 @@
         <source-file src="src/android/com/alu/service/ServiceUtils.java"            target-dir="src/com/alu/service" />
         <source-file src="src/android/com/alu/service/ServiceBootReceiver.java"     target-dir="src/com/alu/service" />
         <source-file src="src/android/com/alu/service/ServiceManager.java"          target-dir="src/com/alu/service" />
-        <source-file src="src/android/com/alu/service/example/ExampleServiceA.java" target-dir="src/com/alu/service/example" />
 
     </platform>
 
