@@ -81,7 +81,7 @@ public class ServicePlugin extends CordovaPlugin {
 	 */
 	public boolean stopService(String className){
 		Class<? extends Service> serviceClass = ServiceManager.getServiceClassByName(className);
-		if(serviceClass != null && !isServiceRunning(serviceClass)){
+		if(serviceClass != null && isServiceRunning(serviceClass)){
 			Log.d(LOG_KEY, "Starting service : " + className);
 			return cordova.getActivity().stopService(new Intent(cordova.getActivity(),serviceClass));
 		}else{

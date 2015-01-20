@@ -30,7 +30,7 @@ cordova plugin add https://github.com/Khopa/CordovaService
 ####Start Service
 
 ```javascript
-Service.startService(serviceClassName, callback, error)
+service.startService(serviceClassName, callback, error)
 ```
 
 **Before being able to start, a service must be registered in the Android Manifest like this :**
@@ -43,7 +43,7 @@ Service.startService(serviceClassName, callback, error)
 **Example of usage :**
 
 ```javascript
-Service.startService("com.me.MyService",
+service.startService("com.me.MyService",
 					function(result){
 						// result is either true or false
 						console.log("The service was started");
@@ -59,7 +59,7 @@ Service.startService("com.me.MyService",
 #### Stop Service
 
 ```javascript
-Service.stop(serviceClassName, callback, error)
+service.stopService(serviceClassName, callback, error)
 ```
 
 ***
@@ -67,7 +67,7 @@ Service.stop(serviceClassName, callback, error)
 #### Register Service
 
 ```javascript
-Service.registerService(serviceClassName, callback, error)
+service.registerService(serviceClassName, callback, error)
 ```
 
 ***
@@ -75,7 +75,7 @@ Service.registerService(serviceClassName, callback, error)
 #### Unregister Service
 
 ```javascript
-Service.unregisterService(serviceClassName, callback, error)
+service.unregisterService(serviceClassName, callback, error)
 ```
 
 ***
@@ -83,7 +83,7 @@ Service.unregisterService(serviceClassName, callback, error)
 #### Is Service Running ?
 
 ```javascript
-Service.isServiceRunning(serviceClassName, callback, error)
+service.isServiceRunning(serviceClassName, callback, error)
 ```
 
 ***
