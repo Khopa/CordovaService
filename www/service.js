@@ -1,10 +1,18 @@
+var exec = require('cordova/exec');
+
+/**
+ * Service Interface
+ */
+var Service = function() {
+};
+
 /**
  * Start a service using it's classpath name
  * @param str Service classpath name (Example : com.me.MyService)
  * @param callback Callback on success (Takes one param : True if service was succesfully started)
  * @param error Callback on error (Error string in the unique param)
  */
-window.startService = function(serviceClassName, callback, error) {
+Service.startService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -20,7 +28,7 @@ window.startService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service is not running after method call)
  * @param error Callback on error (Error string in the unique param)
  */
-window.stopService = function(serviceClassName, callback, error) {
+Service.stopService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -51,7 +59,7 @@ window.registerService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service was unregistered after method call)
  * @param error Callback on error (Error string in the unique param)
  */
-window.unregisterService = function(serviceClassName, callback, error) {
+Service.unregisterService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -66,7 +74,7 @@ window.unregisterService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service is running)
  * @param error Callback on error (Error string in the unique param)
  */
-window.isServiceRunning = function(serviceClassName, callback, error) {
+Service.isServiceRunning = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
