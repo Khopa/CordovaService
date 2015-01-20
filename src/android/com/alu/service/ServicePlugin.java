@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.util.Log;
 
 /**
- * Cordova service to run plugins
+ * Cordova plugin to run services 
  * @author Clement Perreau
  */
 public class ServicePlugin extends CordovaPlugin {
@@ -32,13 +32,13 @@ public class ServicePlugin extends CordovaPlugin {
 		
 		if("startService".equals(action)){
 			serviceClassName = args.get(0).toString();
-			Log.d(LOG_KEY, "Starting service");
 			result = startService(serviceClassName);
 	    	callbackContext.success(String.valueOf(result));
 	    	return true;
 		}else if("stopService".equals(action)){
 			serviceClassName = args.get(0).toString();
-	    	callbackContext.success(String.valueOf(false));
+			result = stopService(serviceClassName);
+	    	callbackContext.success(String.valueOf(result));
 	    	return true;
 	    }else if("registerService".equals(action)){
 	    	serviceClassName = args.get(0).toString();
@@ -56,7 +56,7 @@ public class ServicePlugin extends CordovaPlugin {
 	    	callbackContext.success(String.valueOf(result));
 	    	return true;
 	    }else{
-	    	Log.d(LOG_KEY, "WARNING : Call to unknown plugin method");
+	    	Log.d(LOG_KEY, "WARNING : Called unknown plugin method");
 	    	return false;
 	    }
 	}
@@ -68,9 +68,8 @@ public class ServicePlugin extends CordovaPlugin {
 	public boolean startService(String className){			
 		Class<? extends Service> serviceClass = ServiceManager.getServiceClassByName(className);
 		if(serviceClass != null && !isServiceRunning(serviceClass)){
-			cordova.getActivity().startService(new Intent(cordova.getActivity(), serviceClass));
-			Log.d(LOG_KEY, "Starting service -- Step 2 OK");
-			return true;
+			Log.d(LOG_KEY, "Starting service : " + className);
+			return cordova.getActivity().startService(new Intent(cordova.getActivity(), serviceClass)) != null;
 		}else{
 			return false;
 		}
@@ -80,8 +79,14 @@ public class ServicePlugin extends CordovaPlugin {
 	 * Stop the service using the given class name
 	 * @return True if the service is not running after this method call
 	 */
-	public boolean stopService(String serviceIntentName){
-		return false; // TODO : Implement
+	public boolean stopService(String className){
+		Class<? extends Service> serviceClass = ServiceManager.getServiceClassByName(className);
+		if(serviceClass != null && !isServiceRunning(serviceClass)){
+			Log.d(LOG_KEY, "Starting service : " + className);
+			return cordova.getActivity().stopService(new Intent(cordova.getActivity(),serviceClass));
+		}else{
+			return true;
+		}
 	}
 	
 	
