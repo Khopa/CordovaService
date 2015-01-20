@@ -27,8 +27,8 @@ public class ServiceUtils {
 
 		// Build notification
 		Notification n  = new Notification.Builder(context)
-		        .setContentTitle("IBeacon Service")
-		        .setContentText("The ibeacon service is running")
+		        .setContentTitle(title)
+		        .setContentText(text)
 		        .setContentIntent(pIntent)
 		        .build();
 
