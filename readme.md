@@ -62,6 +62,8 @@ service.startService("com.me.MyService",
 service.stopService(serviceClassName, callback, error)
 ```
 
+Callback method receive true as param if the service is not running after the method call.
+
 ***
 
 #### Register Service
@@ -69,6 +71,14 @@ service.stopService(serviceClassName, callback, error)
 ```javascript
 service.registerService(serviceClassName, callback, error)
 ```
+
+Once registered, the service will be started after device's boot. It may takes 30-40 seconds before the service actually starts. You may register as many service to start at boot as needed, as long as they are declared in the app manifest.
+
+It is recommended to let the user configure this behaviour in the application settings if the background service is not a mandatory feature of your application.
+
+The callback method receive true as param if the service is registered after the method call.
+
+**Calling this function will not start the service**
 
 ***
 
@@ -78,6 +88,12 @@ service.registerService(serviceClassName, callback, error)
 service.unregisterService(serviceClassName, callback, error)
 ```
 
+Unregister the service from boot sequence.
+
+Callback method receive true as param if the service is unregistered after the method call.
+
+**Calling this function will not stop the service**
+
 ***
 
 #### Is Service Running ?
@@ -85,6 +101,8 @@ service.unregisterService(serviceClassName, callback, error)
 ```javascript
 service.isServiceRunning(serviceClassName, callback, error)
 ```
+
+Callback method receive true if the service is currently running.
 
 ***
 
