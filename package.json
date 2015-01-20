@@ -4,8 +4,8 @@
     "cordova_name": "Cordova Service Manager",
     "description": "Manage background and foreground services",
     "license": "Apache 2.0",
-    "repo": "https://github.com/Khopa/com.alu.cordova-service",
-    "issue": "https://github.com/Khopa/com.alu.cordova-service/issues",
+    "repo": "https://github.com/Khopa/CordovaService",
+    "issue": "https://github.com/Khopa/CordovaService/issues",
     "keywords": [
         "Service",
         "Foreground Service"
