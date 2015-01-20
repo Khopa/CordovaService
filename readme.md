@@ -42,7 +42,7 @@ service.startService(serviceClassName, callback, error)
 **Before being able to start, a service must be registered in the Android Manifest like this :**
 
 ```xml
-<service android:name="com.me.MyService" android:label="MyService" >
+<service android:name="MyService" android:label="com.me.MyService" >
 </service>
 ```
 
