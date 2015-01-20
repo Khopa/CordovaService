@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Log;
 
 
 /**
@@ -60,6 +61,8 @@ public class ServiceManager {
 		
 		servicesString += serviceClassName + ";";
 		
+		Log.d(ServicePlugin.LOG_KEY, "Registered services are : " + servicesString);
+		
 		e.putString(SERVICE_LIST_KEY, servicesString);
 		return e.commit();
 	}
@@ -84,6 +87,8 @@ public class ServiceManager {
 				newServicesString += str + ";";
 			}
 		}
+		
+		Log.d(ServicePlugin.LOG_KEY, "Registered services are : " + newServicesString);
 		
 		e.putString(SERVICE_LIST_KEY, newServicesString);
 		return e.commit();
