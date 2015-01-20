@@ -1,18 +1,10 @@
-var exec = require('cordova/exec');
-
-/**
- * Service Interface
- */
-var Service = function() {
-};
-
 /**
  * Start a service using it's classpath name
  * @param str Service classpath name (Example : com.me.MyService)
  * @param callback Callback on success (Takes one param : True if service was succesfully started)
  * @param error Callback on error (Error string in the unique param)
  */
-Service.startService = function(serviceClassName, callback, error) {
+var startService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -28,7 +20,7 @@ Service.startService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service is not running after method call)
  * @param error Callback on error (Error string in the unique param)
  */
-Service.stopService = function(serviceClassName, callback, error) {
+var stopService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -44,7 +36,7 @@ Service.stopService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service was registered after method call)
  * @param error Callback on error (Error string in the unique param)
  */
-window.registerService = function(serviceClassName, callback, error) {
+var registerService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -59,7 +51,7 @@ window.registerService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service was unregistered after method call)
  * @param error Callback on error (Error string in the unique param)
  */
-Service.unregisterService = function(serviceClassName, callback, error) {
+var unregisterService = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -74,7 +66,7 @@ Service.unregisterService = function(serviceClassName, callback, error) {
  * @param callback Callback on success (Takes one param : True if service is running)
  * @param error Callback on error (Error string in the unique param)
  */
-Service.isServiceRunning = function(serviceClassName, callback, error) {
+var isServiceRunning = function(serviceClassName, callback, error) {
     cordova.exec(
         function(result){callback(result);},
         function(err){error((err));},
@@ -82,3 +74,16 @@ Service.isServiceRunning = function(serviceClassName, callback, error) {
         "isServiceRunning",
         [serviceClassName]);
 };
+
+
+module.exports = {
+    startService:startService,
+    stopService:stopService,
+    registerService:registerService,
+    unregisterService:unregisterService,
+    isServiceRunning:isServiceRunning
+};
+
+
+
+
