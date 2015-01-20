@@ -8,6 +8,12 @@
 
 This plugins allows to start and stop custom native Android foreground services. It may also register services to start at device boot.
 
+###How to use
+
+- Create a class that extends android.app.Service to do whatever you need to do.
+- Don't forget to declare it as a service in the application manifest.
+- Install this cordova plugin and use the javascript interface provided to manage your service behaviour.
+
 ###Installation
 
 ```
