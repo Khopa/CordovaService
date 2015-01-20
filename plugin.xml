@@ -13,7 +13,9 @@
     <repo>https://github.com/Khopa/CordovaService</repo>
     <issue>https://github.com/Khopa/CordovaService/issues</issue>
 
-    <js-module src="www/service.js" name="www/js/plugin/service.js"/>
+    <js-module src="www/service.js" name="service.js">
+        <clobbers target="cordova.plugins.Service" />
+    </js-module>
 
     <!-- android -->
     <platform name="android">
