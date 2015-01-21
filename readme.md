@@ -1,7 +1,5 @@
 ##Cordova Service Plugin
 
-*This is still work in progress and incomplete. Use at your own risks*
-
 *Only android is supported currently*
 
 ###Description
