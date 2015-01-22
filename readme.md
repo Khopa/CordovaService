@@ -4,7 +4,7 @@
 
 ###Description
 
-This plugins allows to start and stop custom native Android foreground services. It may also register services to start at device boot.
+This plugins allows to start and stop custom native Android services. It may also register services to start at device boot.
 
 ###How to use
 
@@ -49,14 +49,17 @@ service.startService(serviceClassName, callback, error)
 ```javascript
 service.startService("com.me.MyService",
 					function(result){
-						// result is either true or false
-						console.log("The service was started");
+						if(result==true){
+							console.log("The service was started");
+						}else{
+							console.log("There was a problem starting the service");
+						}
 					}, function(error){
 						console.log(error);
 					});
 ```
 
-*The function may return "true" if you launch a service which is not declared in the manifest, that will die immediatly. So don't put too much trust into that return value, and use the isServiceRunning function if you want to be sure of the service's state.*
+*Your service may very well die or be killed by the Android system according the way you configured it. You should use the isServiceRunning function if you want to be sure of the service's state.*
 
 ***
 
@@ -65,7 +68,7 @@ service.startService("com.me.MyService",
 ```javascript
 service.stopService(serviceClassName, callback, error)
 ```
-
+This stop the service. 
 Callback method receive true as param if the service is not running after the method call.
 
 ***
