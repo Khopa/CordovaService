@@ -5,6 +5,7 @@
 ###Description
 
 This plugins allows to start and stop custom native Android services. It may also register services to start at device boot.
+This may look a bit useless, but I made this cause i had made several plugins that involved starting/stopping Android Services and wanted a generic Cordova javascript interface to interact with these Android Service and to avoid having to write 5 times the same startService code in each plugin.
 
 ###How to use
 
